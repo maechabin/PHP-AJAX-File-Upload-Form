@@ -1,20 +1,17 @@
 <?php
-/*
-if (is_uploaded_file($_FILES["file"]["tmp_name"])) {
- 
-	if (move_uploaded_file($_FILES["file"]["tmp_name"], "csv/" . $_FILES["file"]["name"])) {
- 
-		chmod("csv/" . $_FILES["file"]["name"], 0644);
- 
-	}
- 
-}
-*/
 class Upload {
 
 	private function upload_file() {
 
-		move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
+		if (is_uploaded_file($_FILES["file"]["tmp_name"])) {
+
+			if (move_uploaded_file( $_FILES["file"]["tmp_name"], "upload/" . basename($_FILES["file"]["name"])) ) {
+
+				chmod("upload/" . $_FILES["file"]["name"], 0644);
+
+			}
+
+		}
 
 	}
 

@@ -7,7 +7,7 @@ var upload = (function () {
 		form.on("submit", function () {
 
 			upload_file().done(function () {
-				console.log("OK");
+				alert("OK");
 			});
 
 		});
@@ -47,4 +47,4 @@ var upload = (function () {
 
 } ());
 
-upload.init();
+window.onload = upload.init();
